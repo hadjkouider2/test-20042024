@@ -1,7 +1,7 @@
-let title = document.getElementById('title');
+
 let price = document.getElementById('price');
 let taxes = document.getElementById('taxes');
-let count = document.getElementById('count');
+let qtt = document.getElementById('qtt');
 let discount = document.getElementById('discount');
 let total = document.getElementById('total');
 
@@ -10,7 +10,7 @@ let total = document.getElementById('total');
 function gettotal()
     {
         if(price.value !=""){
-            let result = (+price.value + +taxes.value + +count.value)- +discount.value ;
+            let result = ( +price.value+ +taxes.value + +qtt.value)- +discount.value ;
             total.innerHTML = result;
             total.style.background = 'yellow'
 
@@ -29,13 +29,13 @@ function gettotal()
        var clone = x.cloneNode(true);
        document.body.appendChild(clone);
 
-       var removeButton = document.createElement('removeButton');
+       var removeButton = document.createElement('Button');
        removeButton.innerHTML = '<ion-icon name="trash-outline" class="delete"></ion-icon>';
-       removeButton.setAttribute('class','remove');
-      clone.appendChild(removeButton);
+       clone.appendChild(removeButton);
+       removeButton.setAttribute("class","remove");
       
   clearData()
-  remove()
+  
 }
 
 function clearData(){
@@ -44,15 +44,15 @@ function clearData(){
     taxes.value ='';
     discount.value ='';
     total.innerHTML ='';
-    count.value ='';
+    qtt.value ='';
    
 }
 
 
-function remove(){
-    const element = document.getElementsByClassName('remove');
-    element.remove();
-}
+
+    
+    
+
 
 
 
